@@ -11,7 +11,7 @@ snippet box "Box"
 $0
 endsnippet
 
-snippet newdoc "New document" b
+snippet newdoc "New document" wA
 \documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[a4paper, left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
@@ -29,7 +29,7 @@ snippet newdoc "New document" b
 \renewcommand{\thesubsection}{\arabic{subsection}}
 \renewcommand{\thesubsubsection}{(\emph{\alph{subsubsection}})}
 
-\title{}
+\title{$1}
 \author{Hugo Lageneste}
 \date{`date +%F`}
 
@@ -47,7 +47,7 @@ endsnippet
 snippet dm "Display math" wA
 \[
 $1
-.\] $0
+\] $0
 endsnippet
 
 snippet im "Inline math" wA
@@ -75,10 +75,6 @@ snippet // "Fraction" iA
 \\frac{$1}{$2}$0
 endsnippet
 
-snippet / "Fraction" iA
-\\frac{${VISUAL}}{$1}$0
-endsnippet
-
 priority 10
 snippet "bar" "bar" riA
 \overline{$1}$0
@@ -87,4 +83,21 @@ endsnippet
 priority 100
 snippet "([a-zA-Z])bar" "bar" riA
 \overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 100
+snippet ... "ldots" iA
+\ldots
+endsnippet
+
+snippet <= "leq" iA
+\le 
+endsnippet
+
+snippet >= "geq" iA
+\ge 
+endsnippet
+
+snippet <-> "leftrightarrow" iA
+\leftrightarrow
 endsnippet
