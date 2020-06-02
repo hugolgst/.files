@@ -34,10 +34,10 @@ let g:vimtex_view_method = 'zathura'
 let g:livepreview_previewer = 'zathura'
 
 " Set tab sizes
-au FileType go set noexpandtab
-au FileType go set shiftwidth=4
-au FileType go set softtabstop=4
-au FileType go set tabstop=4
+set noexpandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 
 " Set color schemes
 colorscheme gruvbox
