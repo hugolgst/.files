@@ -7,9 +7,20 @@ Plug 'fatih/vim-go'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 syntax enable
+
+" Snippets
+let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'my_snippets']
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+" Latex file type as default for plaintex
+let g:tex_flavor = "latex"
 
 set number relativenumber
 set mouse=a
