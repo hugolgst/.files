@@ -70,3 +70,7 @@ let g:go_auto_type_info = 1
 
 au filetype go inoremap <buffer> . .<C-x><C-o>
 au FileType go nmap <F9> :GoCoverageToggle -short<cr>
+
+setlocal spell
+set spelllang=en_us
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
