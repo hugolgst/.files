@@ -11,7 +11,21 @@ snippet box "Box"
 $0
 endsnippet
 
-snippet newdoc "New document" wA
+snippet doctitle "Document title"
+\begin{center}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\HRule \\\\[0.4cm]
+{\huge \bfseries $1}\\\\[0.1cm]
+\HRule \\\\[0.4cm]
+
+{Hugo \textsc{Lageneste}}\\\\[0.5cm]
+{\large `date +%F`}\\\\[2cm]
+\end{center}
+
+$0
+endsnippet
+
+snippet newdoc "New document"
 \documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[a4paper, left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
@@ -24,6 +38,17 @@ snippet newdoc "New document" wA
 \pgfplotsset{width=6cm,compat=1.9}
 \usepackage{multicol}
 \usepackage{csquotes}
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\newcommand{\incfig}[2][1]{%
+	\def\svgwidth{#1\columnwidth}
+	\import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
 
 \renewcommand{\thesection}{\Alph{section}}
 \renewcommand{\thesubsection}{\arabic{subsection}}
@@ -100,4 +125,33 @@ endsnippet
 
 snippet <-> "leftrightarrow" iA
 \leftrightarrow
+endsnippet
+
+snippet sec "section" iA
+\section{$1}$0
+endsnippet
+
+snippet sub "subsection" iA
+\subsection{$1}$0
+endsnippet
+
+snippet bold "bold" iA
+\textbf{$1} $0
+endsnippet
+
+snippet uline "underline" iA
+\underline{$1} $0
+endsnippet
+
+snippet italic "italic" iA
+\textit{$1} $0
+endsnippet
+
+snippet lb "line break"
+\\
+$1
+endsnippet
+
+snippet { "braces" iA
+{$1}$0
 endsnippet
