@@ -1,7 +1,6 @@
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
-Plug 'aurieh/discord.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'fatih/vim-go'
 Plug 'vim-airline/vim-airline-themes'
@@ -9,6 +8,7 @@ Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'hugolgst/vimsence'
 call plug#end()
 
 syntax enable
@@ -75,6 +75,9 @@ let g:go_auto_type_info = 1
 au filetype go inoremap <buffer> . .<C-x><C-o>
 au FileType go nmap <F9> :GoCoverageToggle -short<cr>
 
-setlocal spell
-set spelllang=en_us
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+let g:vimsence_small_text = 'NeoVim'
+let g:vimsence_small_image = 'neovim'
+let g:vimsence_editing_details = 'Editing: {}'
+let g:vimsence_editing_state = 'Project: {}'
+let g:vimsence_file_explorer_text = 'In NERDTree'
+let g:vimsence_file_explorer_details = 'Looking for files'
