@@ -72,7 +72,6 @@ let g:go_highlight_types = 1
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
 
-au filetype go inoremap <buffer> . .<C-x><C-o>
 au FileType go nmap <F9> :GoCoverageToggle -short<cr>
 
 let g:vimsence_small_text = 'NeoVim'
@@ -81,3 +80,14 @@ let g:vimsence_editing_details = 'Editing: {}'
 let g:vimsence_editing_state = 'Project: {}'
 let g:vimsence_file_explorer_text = 'In NERDTree'
 let g:vimsence_file_explorer_details = 'Looking for files'
+
+au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+
+" Auto completing quotes etc..
+inoremap ( ()<Esc>i
+inoremap { {}<Esc>i
+inoremap {<CR> {<CR>}<Esc>O
+inoremap [ []<Esc>i
+inoremap < <><Esc>i
+inoremap ' ''<Esc>i
+inoremap " ""<Esc>i

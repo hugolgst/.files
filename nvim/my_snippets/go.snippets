@@ -1,0 +1,45 @@
+snippet mainf "main function" bA
+func main() {
+	$1
+}$0
+endsnippet
+
+snippet pkg "package" bA
+package $1
+
+$0
+endsnippet
+
+snippet cst "constants" bA
+const (
+	$1
+)$0
+endsnippet
+
+snippet ipt "imports" bA
+import (
+	$1
+)$0
+endsnippet
+
+snippet if "condition" b
+if $1 {
+	$2
+}$0
+endsnippet
+
+snippet struct "structure" bA
+type $1 struct {
+	$2
+}$0
+endsnippet
+
+snippet prt "prints" bA
+fmt.Println($1)$0
+endsnippet
+
+snippet foreach "for range" bA
+for $1 := range $2 {
+	$0
+}
+endsnippet
